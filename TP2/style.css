@@ -1,0 +1,202 @@
+/*
+    @Copyright:
+        Author:  Iskander Boughnimi
+        class:   IGL3 - 2025/2026
+*/
+
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    transition: .1s;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    background-color: azure;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border: 1px solid;
+    border-radius: 10px;
+    margin: 7px 0;
+    background-color: #fff;
+}
+
+h1 {
+    color: blue;
+    font-size: 3em;
+    margin: 0;
+}
+
+h3 {
+    text-align: left;
+}
+
+.container {
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+#liste {
+    width: 600px;
+    transition: none;
+    text-align: center;
+}
+
+#liste span {
+    text-align: left;
+}
+
+#search_delete {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px
+}
+
+#ajouterBtn {
+    margin-top: 20px
+}
+
+.supp {
+    margin-left: 30px;
+}
+
+#inputField, #ajouterBtn, #filtre_input, #supp_tous {
+    border: 2px solid black;
+    border-radius: 15px;
+    height: 35px;
+}
+
+#inputField {
+    width: 466px;
+}
+
+#filtre_input {
+    width: 150px;
+    height: 30px;
+    margin-left: 20px;
+}
+
+#inputField, #filtre_input {
+    padding: 0 15px; 
+    text-align: center;
+}
+
+#ajouterBtn {
+    width: 500px;
+    background-color: blue;
+}
+
+#supp_tous {
+    width: 175px;
+    background-color: red;
+}
+
+#ajouterBtn, #supp_tous {
+    color: #fff;
+    font-size: .9em;
+}
+
+.deleteBtn, .completeBtn {
+    margin: 10px 5px;
+    width: 50px;
+    height: 30px;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.deleteBtn {
+    border: 2px solid brown;
+    background-color: red;
+}
+
+button:focus, button:hover {
+    filter: grayscale(50%);
+}
+
+.completeBtn {
+    border: 2px solid darkgreen;
+    background-color: green;
+}
+
+.termine {
+    color: red;
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+#stats {
+    text-align: right;
+    font-size: 0.9em;
+}
+
+#termines, #en_cours {
+    color: blue;
+}
+
+#erreur {
+    color: red;
+    font-size: 1em;
+    height: 30px;
+}
+
+.flex-grow {
+    flex-grow: 1;
+    display: inline-block;
+    align-items: center;
+    overflow: hidden;
+    word-wrap: break-word;
+    white-space: normal;
+    max-width: calc(100% - 150px);
+}
+
+/*
+    Ajustement pour un design responsive.
+*/
+@media screen and (width <= 750px) {
+    #ajouterBtn {
+        width: 90%;
+    }
+
+    #inputField {
+        width: calc(90% - 34px);
+    }
+
+    #display {
+        width: 90%;
+    }
+
+    #liste {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 7vw;
+    }
+
+    #liste {
+        font-size: .8em;
+    }
+
+    .flex-grow {
+        word-wrap: none;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 250px;
+    }
+}

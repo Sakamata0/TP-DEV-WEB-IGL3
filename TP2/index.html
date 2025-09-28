@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Application de Gestion de Tâches</title>
+</head>
+<body>
+    <div class="container">
+        <h1>App de Gestion de Tâches</h1>
+        <div id="erreur"></div>
+        <input type="text" id ="inputField" placeholder="Entrer votre tâche">
+        <button id="ajouterBtn">Ajouter</button>
+        <div id="display">
+            <div id="stats">
+                <p>Tâche(s) terminé(s): <span id="termines"></span>, Tâche(s) en cours: <span id="en_cours"></span>.</p>
+            </div>
+            <div id="search_delete">
+                <div id="filtre">
+                    <label for="filtre_input">Filtre: <input type="text" id="filtre_input" placeholder="Rechercher"></label>
+                </div>
+                <button id="supp_tous">Supprimer Tous</button>
+            </div>
+            <ul id="liste"></ul>
+        </div>
+        <script src="script.js"></script>
+    </div>
+    <!--
+        @Copyright:
+            Author:  Iskander Boughnimi
+            class:   IGL3 - 2025/2026
+    -->
+</body>
+</html>
