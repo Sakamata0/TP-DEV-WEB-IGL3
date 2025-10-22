@@ -1,0 +1,84 @@
+II)
+
+Activité 1:
+
+2)
+src/app: contient le cœur de l'application Angular.
+src/assets: contient des resources (images, fichiers CSS, icones, polices, ...).
+src/environments: contient les fichiers de configuration pour différents environnements.
+src/main.ts: initialise le module racine (AppModule) et démarre l’application dans le navigateur.
+src/index.html: page HTML principale chargée par le navigateur.
+angular.json: fichier de configuration du projet Angular.
+package.json: fichier de configuration du projet Node.js/Angular.
+tsconfig.json: fichier de configuration TypeScript.
+
+Activité 4:
+
+1) 
+Erreur généré: Can't bind to 'ngModel' since it isn't a known property of 'input'
+
+2)
+a- ngModel permet de créer une liaison bidirectionnelle entre les données du composant TypeScript et les éléments du formulaire HTML.
+=> FormsModule doit être importé dans app.module.ts pour que ngModel fonctionne correctement dans les templates.
+
+b- AppModule gère la structure et les dépendances globales de l’application.
+C’est grâce à lui que l’application sait quels modules et composants sont disponibles.
+
+III)
+* Créer un composant Etudiant:
+2)
+- contrôle le comportement et la dynamique du composant.
+- définit l’interface visuelle du composant.
+- gère l’apparence du composant.
+- sert à vérifier automatiquement que le composant fonctionne correctement.
+
+* Créer et manipuler une classe Etudiant:
+2)
+Export: rendre disponible à l’extérieur du fichier.
+Interface: décrit la forme d’un objet (comme un modele).
+
+Signification de chaque terme:
+name: string  (propriété obligatoire)
+name!: string (propriété obligatoire, mais initialisée plus tard)
+name?: string (propriété facultative)
+
+5)
+Angular ne sait pas comment afficher un objet complet directement dans le template.
+
+
+V) Validation des acquis
+
+Q1:
+1- b
+2- c
+3- b
+4- a
+5- a
+
+Q2:
+1- c
+2- d
+3- b
+4- a
+5- a
+
+Q3:
+1- c
+2- b
+3- b
+4- c
+5- b
+
+Q4:
+1- c
+2- a
+3- b
+4- c
+5- b
+
+Q5:
+1- a
+2- b
+3- b
+4- b
+5- b
