@@ -1,0 +1,38 @@
+@Author:  Iskander Boughnimi
+@Section: IGL3
+
+IV-3)
+
+- Le dossier src/ contient:
+Le code source principal de l’application Angular, aussi bien que (app/), (assets/), (environments/), et le fichier principal index.html
+- Le dossier node_modules/ contient:
+Toutes les dépendances et bibliothèques installées via npm nécessaires au fonctionnement du projet Angular.
+- Le fichier angular.json contient:
+Les configurations du projet Angular.
+- Le fichier package.json contient:
+La liste des dépendances du projet, les scripts npm (build, start, test, etc.), le nom du projet et les métadonnées nécessaires à npm.
+- Le fichier package-lock.json fournit:
+Le verrouillage exact des versions des dépendances installées afin d’assurer la reproductibilité du projet sur d’autres machines.
+- Le fichier tsconfig.json contient:
+Les paramètres de configuration du compilateur TypeScript.
+
+VI)
+
+Partie 1:
+1- a
+2- c
+3- b
+4- b
+5- c
+6- b
+
+Partie 2:
+1- a
+2- b
+3- b
+4- c
+5- a
+
+Partie 4:
+(à voir fichier exercices-typescript.ts)
+
