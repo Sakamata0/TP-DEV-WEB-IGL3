@@ -2,4 +2,4 @@
 les TPs de développement web - Iskander Boughnimi - IGL3
 
 Nom : Iskander Boughnimi, 
-Class: IGL3
+Section: IGL3
