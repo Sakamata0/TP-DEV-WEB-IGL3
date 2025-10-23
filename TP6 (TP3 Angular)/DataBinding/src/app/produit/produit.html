@@ -1,0 +1,10 @@
+<div 
+    [ngClass]="{'en-stock': enStock, 'hors-stock': !enStock}"
+    [ngStyle]="{'opacity': enStock? '1': '0.5'}"
+    >
+    <img [src]="imageURL" alt="image not found" width="100"><br>
+    <h3>{{nomProduit}}</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni velit tenetur tempore impedit soluta, eveniet qui neque inventore temporibus repellendus iste quod placeat in blanditiis iure eligendi corporis nemo maiores?</p>
+    <button (click)="ajouterProduit()" [disabled]="!enStock" >Ajouter au Panier</button>
+    <button (click)="toggleStock()" >Basculer {{enStock? "Hors Stock" : "En Stock"}}</button>
+</div>
