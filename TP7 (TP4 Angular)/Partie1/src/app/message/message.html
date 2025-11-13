@@ -1,0 +1,18 @@
+<div class="container">
+    <h1 *ngIf="!isLoggedIn">Connectez-vous !</h1>
+    <h1 *ngIf="isLoggedIn">Bienvenue, {{ correctUsername }} !</h1>
+
+    <form class="form">
+        <label for="username">Nom d'utilisateur</label>
+        <input 
+            type="text" 
+            id="username" 
+            [(ngModel)]="username" 
+            name="username" 
+            placeholder="Entrez votre nom" 
+        >
+        <button (click)="isLoggedIn = username == correctUsername">Se connecter</button>
+    </form>
+
+    <p>Pssst : <strong>username = skander</strong></p>
+</div>

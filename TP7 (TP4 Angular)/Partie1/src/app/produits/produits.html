@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Liste des produits</h2>
+
+  <div class="produit" *ngFor="let p of produits">
+    <div class="info">
+        <h3>{{ p.nom }}</h3>
+        <p [ngStyle]="{
+            'color': p.stock > 50 ? 'green' : (p.stock >= 20 ? 'orange' : 'red')
+            }">
+        Stock : {{ p.stock }}
+        </p>
+    </div>
+
+    <div class="actions">
+        <button (click)="augmenterStock(p)">+</button>
+        <button (click)="diminuerStock(p)">-</button>
+    </div>
+  </div>
+</div>
