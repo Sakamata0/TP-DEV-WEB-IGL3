@@ -1,0 +1,14 @@
+.ng-valid:not(form):required {
+    border-left: 5px solid green;
+}
+
+.ng-invalid:not(form):required {
+    border-left: 5px solid red;
+}
+
+.submitted-infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
