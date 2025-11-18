@@ -1,0 +1,26 @@
+<div class="game-wrap">
+  <div class="top-row">
+    <h2>Quiz Game</h2>
+    <button class="small" (click)="restart()">Restart</button>
+  </div>
+
+  <app-score [score]="score" [bonnes]="bonnes" [mauvaises]="mauvaises"></app-score>
+
+  <div class="progress">
+    <div class="bar" [style.width.%]="progressPercent"></div>
+  </div>
+
+  <div class="question-area">
+    <app-question
+      [question]="questions[currentIndex]"
+      [index]="currentIndex"
+      [duration]="durationPerQuestion"
+      (selected)="onSelectOption($event, questions[currentIndex])"
+      (timeoutEvent)="onTimeout(questions[currentIndex])">
+    </app-question>
+  </div>
+
+  <div class="footer">
+    <p>Question {{ currentIndex + 1 }} / {{ questions.length }}</p>
+  </div>
+</div>

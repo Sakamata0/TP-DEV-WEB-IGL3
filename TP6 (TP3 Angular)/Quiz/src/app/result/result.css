@@ -1,0 +1,36 @@
+.result-wrap {
+    text-align:center;
+    margin-top:60px;
+}
+.result-wrap h1 {
+    font-size:34px;
+    margin-bottom:14px;
+}
+.summary {
+    display:inline-block;
+    padding:18px 28px;
+    border-radius:12px;
+    background:#fff;
+    box-shadow:0 8px 24px rgba(0,0,0,0.06);
+}
+.summary p {
+    margin:8px 0;
+    font-size:18px;
+}
+.actions {
+    margin-top:20px;
+}
+.actions button {
+    margin:0 8px;
+    padding:10px 18px;
+    border-radius:8px;
+    border:none;
+    cursor:pointer;
+}
+.actions button.alt {
+    background: #3f51b5;
+    color: #fff;
+}
+.actions button:hover {
+    transform:translateY(-2px);
+}

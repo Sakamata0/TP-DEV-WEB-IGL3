@@ -1,0 +1,16 @@
+<div class="question-card">
+  <div class="q-head">
+    <h3>{{ question.question }}</h3>
+    <div class="timer">
+      <div class="timer-circle">
+        <span>{{ timeLeft }}s</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="options">
+    <button *ngFor="let opt of question.options"
+            (click)="choose(opt)"
+            [disabled]="locked">{{ opt }}</button>
+  </div>
+</div>

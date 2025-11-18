@@ -1,0 +1,38 @@
+<div class="container">
+    <h1>Catalogue de livres</h1>
+
+    <div class="main-container">
+        <div class="form-container">
+            <app-book-form
+                [categories]="categories"
+                [livrePourModifie]="livrePourModifie"
+                (addBook)="onAddBook($event)"
+                (updateBook)="onUpdateBook($event)"
+                (cancelEdit)="cancelEdit()">
+            </app-book-form>
+        </div>
+    
+        
+
+        <div class="display-container">
+            <div class="controls">
+                <input type="text" class="form-control max-width" placeholder="Recherche par titre ou auteur" [(ngModel)]="searchText" />
+                <select class="form-control max-width" [(ngModel)]="sortBy">
+                    <option value="">Trier...</option>
+                    <option value="category">Par catégorie</option>
+                    <option value="availability">Par disponibilité</option>
+                </select>
+                <div class="counter">Total des Livres: {{ countTotal() }}</div>
+            </div>
+
+            <app-book-list
+                [livres]="livresFiltres"
+                (delete)="onDeleteBook($event)"
+                (edit)="onEditRequested($event)">
+            </app-book-list>
+        </div>
+    </div>
+    <div class="credits">
+        <p>©Copyright Skander_Boughnimi</p>
+    </div>
+</div>

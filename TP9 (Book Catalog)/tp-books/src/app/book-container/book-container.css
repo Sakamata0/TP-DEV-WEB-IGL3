@@ -1,0 +1,60 @@
+.container {
+    width: 100vw;
+    max-width: 90vw;
+    height: 100vh;
+    padding: 1em;
+    padding-top: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.container > h1 {
+    text-align: center;
+}
+.controls {
+    display:flex;
+    gap:1rem;
+    align-items:center;
+    margin:1rem 0;
+}
+.counter {
+    margin-left:auto;
+    font-weight:600;
+    min-width: fit-content;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.display-container {
+    max-width: 900px;
+    width: 100%;
+}
+
+.form-container {
+    max-width: 700px;
+    width: 100%;
+}
+
+.credits p {
+    font-size: 1.4em;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    background: linear-gradient(90deg, #007bff, #ff4081, #007bff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200%;
+    animation: textFlow 5s linear infinite;
+}
+
+@keyframes textFlow {
+    to {
+        background-position: 200%;
+    }
+}

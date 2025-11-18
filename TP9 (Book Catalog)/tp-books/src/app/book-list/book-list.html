@@ -1,0 +1,46 @@
+<div class="pagination-container" *ngIf="totalPages > 1">
+  
+  <button class="btn btn-info" (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1">
+    Précédent
+  </button>
+
+  <span style="display:flex; align-items:center; gap:6px;">
+    Page {{currentPage}} / {{ totalPages }}
+  </span>
+
+  <button class="btn btn-info" (click)="goToPage(currentPage + 1)" [disabled]="currentPage === totalPages">
+    Suivant
+  </button>
+</div>
+
+<table class="book-table" *ngIf="livres.length">
+  <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Auteur</th>
+      <th>Catégorie</th>
+      <th>Disponible</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let livre of paginatedLivres">
+      <td>{{ livre.title }}</td>
+      <td>{{ livre.author }}</td>
+      <td>{{ livre.category }}</td>
+      <td>{{ livre.isAvailable ? 'Oui' : 'Non' }}</td>
+      <td>
+        <div class="action-buttons">
+          <button class="btn btn-success" (click)="edit.emit(livre)">Éditer</button>
+          <button class="btn btn-danger" (click)="delete.emit(livre.id)">Supprimer</button>
+        </div>
+        
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<div *ngIf="livres.length == 0">
+  <p style="text-align: center">Aucun livre à afficher.</p>
+</div>

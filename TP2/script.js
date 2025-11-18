@@ -228,12 +228,12 @@ function terminerTache(tache) {
 // Fonction pour filtrer la liste selon le texte
 function filtre() {
     // Extraction du texte de la zone de saisie
-    let filtreTexte = filtreInput.value.trim();
+    let filtreTexte =  filtreInput.value.trim().toLowerCase();
 
     // La recherche des tâches contenant le contenu du 'filtreTexte'
     Liste.innerHTML = "";
     ToDoList.forEach(tache => {
-        if(tache.texte.indexOf(filtreTexte) != -1) {
+        if(tache.texte.toLowerCase().includes(filtreTexte)) {
             Liste.appendChild(tache.htmlElement);
         }
     })

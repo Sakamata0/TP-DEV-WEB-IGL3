@@ -1,0 +1,140 @@
+<form #bookForm="ngForm" (ngSubmit)="onSubmit(bookForm)" class="book-form">
+    <h2>{{ livrePourModifie ? 'Modifier le livre' : 'Ajouter un livre' }}</h2>
+
+    <div class="form-group">
+        <label for="title">Titre *</label>
+        <input
+            type="text" class="form-control" id="title" 
+            [(ngModel)]="model.title"
+            name="title"
+            #title="ngModel"
+            required minlength="3"
+            >
+        <div 
+            [hidden]="title.valid || title.pristine"
+            class="alert alert-danger"
+            >
+            <div *ngIf="title.errors?.['required']">Le titre est obligatoire.</div>
+            <div *ngIf="title.errors?.['minlength']">Au moins 3 caractères.</div>
+            <div *ngIf="title.errors?.['pattern']">Le titre ne peut pas être composé uniquement de chiffres.</div>
+        </div>
+
+    </div>
+
+     <div class="form-group">
+        <label for="author">Auteur *</label>
+        <input
+            type="text" class="form-control" id="author" 
+            [(ngModel)]="model.author"
+            name="author"
+            #author="ngModel"
+            required minlength="3"
+            >
+        <div 
+            [hidden]="author.valid || author.pristine"
+            class="alert alert-danger"
+            >
+            <div *ngIf="author.errors?.['required']">L'auteur est obligatoire.</div>
+            <div *ngIf="author.errors?.['minlength']">Au moins 3 caractères.</div>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label for="publisherEmail">Email éditeur *</label>
+        <input
+            type="email" class="form-control" id="publisherEmail" 
+            [(ngModel)]="model.publisherEmail"
+            name="publisherEmail"
+            #pubEmail="ngModel"
+            required email
+            >
+        <div 
+            [hidden]="pubEmail.valid || pubEmail.pristine"
+            class="alert alert-danger"
+            >
+                <div *ngIf="pubEmail.errors?.['required']">Email requis.</div>
+                <div *ngIf="pubEmail.errors?.['email']">Format email invalide.</div>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label for="publisherPhone">Téléphone (optionnel)</label>
+        <input
+            type="text" class="form-control" id="publisherPhone" 
+            [(ngModel)]="model.publisherPhone"
+            name="publisherPhone"
+            #pubPhone="ngModel"
+            pattern="^[0-9]{8}$"
+            >
+        <div 
+            [hidden]="pubPhone.valid || pubPhone.pristine"
+            class="alert alert-danger"
+            >
+                <div *ngIf="pubPhone.errors?.['pattern']">Format : 8 chiffres (ex: 12345678)</div>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label for="releaseDate">Date de sortie *</label>
+        <input
+            type="date" class="form-control" id="releaseDate" 
+            [(ngModel)]="model.releaseDate"
+            name="releaseDate"
+            #relDate="ngModel"
+            required
+            >
+        <div 
+            [hidden]="relDate.valid || relDate.pristine"
+            class="alert alert-danger"
+            >
+                <div *ngIf="relDate.errors?.['required']">La date est requise.</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="category">Catégorie</label>
+        <select class="form-control" id="category" required
+            [(ngModel)]="model.category" name="category" #category="ngModel">
+            <option value="" disabled selected>-- Catégorie --</option>
+            @for (category of categories; track $index) {
+                <option [value]="category">{{category}}</option>
+            }
+        
+        </select>
+    </div>
+
+     <div class="form-group">
+        <label><input type="checkbox" name="isAvailable" [(ngModel)]="model.isAvailable" #dispo="ngModel"/> Disponible</label>
+    </div>
+
+
+    <div class="form-group">
+        <label for="stock">Stock (optionnel)</label>
+        <input
+            type="number" class="form-control" id="stock" 
+            [(ngModel)]="model.stock"
+            name="stock"
+            #stock="ngModel"
+            min="0"
+            [disabled]="!model.isAvailable"
+            >
+        <div 
+            [hidden]="!model.isAvailable  || stock.valid || stock.pristine"
+            class="alert alert-danger"
+            >
+                <div *ngIf="stock.errors?.['min']">Le stock doit être >= 0</div>
+        </div>
+    </div>
+
+    <div class="actions">
+        <button type="submit" [disabled]="!bookForm.form.valid" class="btn btn-success">
+            {{ livrePourModifie ? 'Mettre à jour' : 'Ajouter' }}
+        </button>
+        <button type="submit" class="btn">
+            Annuler
+        </button>
+    </div>
+</form>

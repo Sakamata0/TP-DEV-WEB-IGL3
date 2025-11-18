@@ -77,6 +77,7 @@ p {
     font-weight: bold;
     background: linear-gradient(90deg, #007bff, #ff4081, #007bff);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 200%;
     animation: textFlow 3s linear infinite;

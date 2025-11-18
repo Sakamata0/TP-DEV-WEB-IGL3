@@ -7,6 +7,7 @@ import { NgClass, NgStyle } from '@angular/common';
   templateUrl: './produit.html',
   styleUrl: './produit.css',
 })
+
 export class Produit {
   imageURL: string = 'assets/laptop.jpg';
   @Input() nomProduit: string = 'Ordinateur Portable';
