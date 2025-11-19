@@ -1,0 +1,52 @@
+<h2>Liste des Étudiants</h2>
+
+<div class="page-layout">
+    
+    <ul class="etudiants">
+        <li *ngFor="let etudiant of etuds"
+            (click)="onSelect(etudiant)"
+            [class.selected]="etudiant === selectedStudent">
+            <span class="badge">{{ etudiant.id }}</span>
+            {{ etudiant.name }}
+        </li>
+    </ul>
+
+    <div class="info-container" *ngIf="selectedStudent">
+        <h2>Info de {{ selectedStudent.name | uppercase }}</h2>
+
+        <div class="card-field"><strong>ID :</strong> {{ selectedStudent.id }}</div>
+
+        <div class="card-field">
+            <strong>Nom :</strong>
+            <input class="input-edit" type="text" [(ngModel)]="selectedStudent.name">
+        </div>
+
+        <div class="card-field">
+            <strong>Classe :</strong>
+            <input class="input-edit" type="text" [(ngModel)]="selectedStudent.classe">
+        </div>
+
+        <div class="card-field">
+            <strong>Âge :</strong>
+            <input class="input-edit" type="number" [(ngModel)]="selectedStudent.age">
+        </div>
+
+        <div class="card-field">
+            <strong>Email :</strong>
+            <input class="input-edit" type="email" [(ngModel)]="selectedStudent.email">
+        </div>
+
+        <div class="card-field">
+            <strong>Moyenne :</strong>
+            <input class="input-edit" type="number" step="0.1" [(ngModel)]="selectedStudent.moyenne">
+        </div>
+
+        <div class="card-field">
+            <strong>Téléphone :</strong>
+            <input class="input-edit" type="text" [(ngModel)]="selectedStudent.tel">
+        </div>
+
+    </div>
+
+
+</div>

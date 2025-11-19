@@ -1,0 +1,25 @@
+.home-wrap {
+  text-align: center;
+  margin-top: 80px;
+  background: #fff;
+}
+.home-wrap h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+.home-wrap p {
+  color: #666;
+  margin-bottom: 25px;
+}
+.home-wrap button {
+  padding: 12px 28px;
+  font-size: 18px;
+  background: #3f51b5;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.home-wrap button:hover {
+  background:#5c6bc0;
+}

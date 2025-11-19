@@ -1,0 +1,40 @@
+<div class="game-wrap">
+  <div class="top-row">
+    <h2>Quiz Game</h2>
+    <button class="small" (click)="restart()">Restart</button>
+  </div>
+
+  <app-score [score]="score" [bonnes]="bonnes" [mauvaises]="mauvaises"></app-score>
+
+  <div class="progress">
+    <div class="bar" [style.width.%]="progressPercent"></div>
+  </div>
+
+  <div class="question-wrapper"
+      [ngClass]="{
+        'good-area': answerStatus === 'correct',
+        'bad-area': answerStatus === 'wrong'
+      }">
+
+    <app-question
+      *ngIf="currentIndex < questions.length"
+      [question]="questions[currentIndex]"
+      [index]="currentIndex"
+      [duration]="12"
+      (selected)="onSelectOption($event)"
+    ></app-question>
+
+    <div *ngIf="answerStatus === 'correct'" class="msg good-msg">
+      Bonne réponse !
+    </div>
+
+    <div *ngIf="answerStatus === 'wrong'" class="msg bad-msg">
+      Mauvaise réponse !
+    </div>
+  </div>
+
+
+  <div class="footer">
+    <p>Question {{ currentIndex + 1 }} / {{ questions.length }}</p>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="result-wrap">
+  <h1>Quiz terminé 🎉</h1>
+  <div class="summary">
+    <p>Score final : <strong>{{ score }}</strong></p>
+    <p>Bonnes réponses : <strong>{{ bonnes }}</strong></p>
+    <p>Mauvaises réponses : <strong>{{ mauvaises }}</strong></p>
+    <p>Total questions : <strong>{{ total }}</strong></p>
+  </div>
+
+  <div class="actions">
+    <button (click)="restart()">Rejouer</button>
+    <button class="alt" (click)="home()">Accueil</button>
+  </div>
+</div>
