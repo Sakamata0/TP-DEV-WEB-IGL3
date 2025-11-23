@@ -13,7 +13,7 @@ var obj = {
 // La copie de 'obj'
 var obj_copy = {...obj};
 
-obj_copy.name = "Amenallah";
+obj_copy.name = "Mohamed";
 
 // Affichage
 console.log(obj, obj_copy);

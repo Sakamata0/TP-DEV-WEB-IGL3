@@ -33,6 +33,5 @@ Partie 2:
 4- c
 5- a
 
-Partie 4:
+Partie 4 et 5:
 (à voir fichier exercices-typescript.ts)
-

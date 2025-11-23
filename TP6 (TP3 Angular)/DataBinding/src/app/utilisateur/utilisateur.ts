@@ -8,5 +8,5 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './utilisateur.css',
 })
 export class Utilisateur {
-  nom: string = '';
+  nom: string = 'Skander';
 }

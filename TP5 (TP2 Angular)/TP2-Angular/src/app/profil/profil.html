@@ -4,4 +4,9 @@
     <br>
     <label for="age">Age: </label>
     <input type="number" id="age" name="age" [(ngModel)]="utilisateur.age">
+    <p>Les valeurs saisies en temps réel</p>
+    <ul>    
+        <li>Prénom: {{utilisateur.prenom}}</li>
+        <li>Age: {{utilisateur.age}}</li>
+    </ul>
 </form>
