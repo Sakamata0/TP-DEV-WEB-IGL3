@@ -11,7 +11,9 @@
             name="username" 
             placeholder="Entrez votre nom" 
         >
-        <button (click)="isLoggedIn = username == correctUsername">Se connecter</button>
+        <button (click)="isLoggedIn = username == correctUsername">
+            {{ isLoggedIn ? 'Se déconnecter': 'Se connecter'}}
+        </button>
     </form>
 
     <p>Pssst : <strong>username = skander</strong></p>

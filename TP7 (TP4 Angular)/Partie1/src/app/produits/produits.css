@@ -8,6 +8,10 @@
   background: #f9f9f9;
 }
 
+.container h2 {
+  margin: 20px 0;
+}
+
 .produit {
   border-bottom: 1px solid #ccc;
   padding: 10px 0;

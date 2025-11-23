@@ -52,6 +52,13 @@ button.small {
   animation: shake 0.4s;
 }
 
+.timeout-area {
+  background: #cfcfcf;
+  border: 2px solid #6b6b6b;
+  border-radius: 12px;
+  animation: shake 0.4s;
+}
+
 @keyframes shake {
   0% { transform: translateX(0); }
   25% { transform: translateX(-6px); }
@@ -74,5 +81,5 @@ button.small {
 }
 
 .bad-msg {
-  color: #721c24;
+  color: #000;
 }

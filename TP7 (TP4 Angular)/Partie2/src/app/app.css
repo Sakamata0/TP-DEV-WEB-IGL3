@@ -1,0 +1,27 @@
+.credits p {
+    font-size: 1.4em;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    background: linear-gradient(90deg, #007bff, #ff4081, #007bff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200%;
+    animation: textFlow 5s linear infinite;
+    padding: 10px;
+    z-index: -1;
+}
+
+.main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@keyframes textFlow {
+    to {
+        background-position: 200%;
+    }
+}

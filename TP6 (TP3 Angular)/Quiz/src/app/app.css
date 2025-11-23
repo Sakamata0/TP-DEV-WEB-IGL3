@@ -9,11 +9,15 @@
     -webkit-text-fill-color: transparent;
     background-size: 200%;
     animation: textFlow 5s linear infinite;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    padding: 10px;
     z-index: -1;
+}
+
+.main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 @keyframes textFlow {

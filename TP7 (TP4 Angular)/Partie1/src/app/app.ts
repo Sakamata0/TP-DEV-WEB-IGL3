@@ -1,11 +1,11 @@
 import { Component, signal } from '@angular/core';
-import { Message } from "./message/message";
+import { Welcome } from "./welcome/welcome";
 import { Articles } from './articles/articles';
 import { Produits } from "./produits/produits";
 
 @Component({
   selector: 'app-root',
-  imports: [Message, Articles, Produits],
+  imports: [Articles, Produits, Welcome],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

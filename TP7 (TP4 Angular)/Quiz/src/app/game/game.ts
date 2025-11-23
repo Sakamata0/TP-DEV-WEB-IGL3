@@ -22,7 +22,7 @@ export class Game {
   MINUS = 5;
 
   locked = false;
-  answerStatus: 'none' | 'correct' | 'wrong' = 'none'; 
+  answerStatus: 'none' | 'correct' | 'wrong' | 'timeout' = 'none'; 
   currentIndex = 0;
   durationPerQuestion = 15; // secondes
 
@@ -109,10 +109,11 @@ export class Game {
 
     if (option === current.reponse) {
       this.bonnes++;
-      this.score += 10;
+      this.incrementScore();
       this.answerStatus = 'correct';
     } else {
       this.mauvaises++;
+      this.decrementScore();
       this.answerStatus = 'wrong';
     }
 
@@ -127,11 +128,30 @@ export class Game {
     }, 900);
   }
 
+  incrementScore() {
+    this.score += this.PLUS;
+  }
+
+  decrementScore() {
+    if(this.score < this.MINUS) {
+      this.score = 0
+    }
+    else {
+      this.score -= this.MINUS;
+    }
+  }
+
   onTimeout(question: any) {
     // compter comme mauvaise réponse
-    this.score -= 5;
     this.mauvaises++;
-    setTimeout(() => this.nextQuestion(), 300);
+    this.decrementScore();
+    this.answerStatus = 'timeout';
+
+    setTimeout(() => {
+      this.nextQuestion();
+      this.answerStatus = 'none';
+      this.locked = false;
+    }, 900);
   }
 
   nextQuestion() {

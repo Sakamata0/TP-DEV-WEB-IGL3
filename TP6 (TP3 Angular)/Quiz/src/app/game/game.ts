@@ -107,24 +107,32 @@ export class Game {
     const index = this.currentIndex;
     
     if (option === question.reponse) {
-      this.score += this.PLUS;
+      this.incrementScore();
       this.bonnes++;
     } else {
-      if(this.score < this.MINUS) {
-        this.score = 0
-      }
-      else {
-        this.score -= this.MINUS;
-      }
+      this.decrementScore();
       this.mauvaises++;
     }
 
     setTimeout(() => this.nextQuestion(), 300);
   }
 
+  incrementScore() {
+    this.score += this.PLUS;
+  }
+
+  decrementScore() {
+    if(this.score < this.MINUS) {
+      this.score = 0
+    }
+    else {
+      this.score -= this.MINUS;
+    }
+  }
+
   onTimeout(question: any) {
     // compter comme mauvaise réponse
-    this.score -= 5;
+    this.decrementScore();
     this.mauvaises++;
     setTimeout(() => this.nextQuestion(), 300);
   }

@@ -13,7 +13,8 @@
   <div class="question-wrapper"
       [ngClass]="{
         'good-area': answerStatus === 'correct',
-        'bad-area': answerStatus === 'wrong'
+        'bad-area': answerStatus === 'wrong',
+        'timeout-area': answerStatus === 'timeout'
       }">
 
     <app-question
@@ -22,6 +23,8 @@
       [index]="currentIndex"
       [duration]="12"
       (selected)="onSelectOption($event)"
+      (timeoutEvent)="onTimeout(questions[currentIndex])">
+
     ></app-question>
 
     <div *ngIf="answerStatus === 'correct'" class="msg good-msg">
@@ -30,6 +33,10 @@
 
     <div *ngIf="answerStatus === 'wrong'" class="msg bad-msg">
       Mauvaise réponse !
+    </div>
+
+    <div *ngIf="answerStatus === 'timeout'" class="msg bad-msg">
+      Temps écoulé !
     </div>
   </div>
 

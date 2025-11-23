@@ -4,12 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 
 @Component({
-  selector: 'app-message',
+  selector: 'app-welcome',
   imports: [NgIf, FormsModule],
-  templateUrl: './message.html',
-  styleUrl: './message.css',
+  templateUrl: './welcome.html',
+  styleUrl: './welcome.css',
 })
-export class Message {
+export class Welcome {
   isLoggedIn: boolean = false;
   correctUsername: string = "skander";
   username: string = '';
